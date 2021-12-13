@@ -1,53 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button, FloatingLabel, Form } from "react-bootstrap";
 
 const Weather = () => {
-  const [location, setLocation] = useState({
-    loaded: false,
-    coordinates: { lat: "", long: "" },
-  });
+  const apiKey = "tfDRJSJkIHDqCWG0eajd5nP6jWCRFWyd";
+  const [weatherData, setWeatherData] = useState([{}]);
+  const [city, setCity] = useState('');
 
-  const success = (location) => {
-    setLocation({
-      loaded: true,
-      coordinates: {
-        lat: location.coords.latitude,
-        long: location.coords.longitude,
-      },
-    });
-  };
-  const failed = (location) => {
-    setLocation({
-      loaded: true,
-      error: { 
-          code: 0,
-      }
-    });
-  };
-
-  useEffect(() => {
-    if (!("geolocation" in navigator)) {
-      setLocation((state) => ({
-        ...state,
-        loaded: true,
-        error: {
-          code: 0,
-          message: "Geolocation not supported",
-        },
-      }));
-    }
-
-    navigator.geolocation.getCurrentPosition(success, failed);
-  }, []);
   return (
     <div>
-      <Row s={1}>
+      <Row s={1} md={2}>
         <Col>
           <Card style={{}}>
             <Card.Body>
+                <Col>
               <Card.Title>How's the weather?</Card.Title>
-              <Card.Text></Card.Text>
-              <Button variant="secondary">Hey Siri</Button>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Enter City Name"
+                className="mb-3"
+              >
+                <Form.Control type="text"/>
+              </FloatingLabel>
+              </Col>
+              <Col>
+              <Button variant="secondary">Search</Button>
+              </Col>
             </Card.Body>
           </Card>
         </Col>
