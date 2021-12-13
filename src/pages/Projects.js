@@ -1,6 +1,7 @@
 import React from "react";
-import { Row, Col, CardGroup, Card, Container } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import Speech from "../components/Speech";
+import Weather from "../components/Weather";
 
 import "./Projects.css";
 
@@ -67,6 +68,10 @@ const Projects = () => {
           </Card.Body>
         </Card>
  
+        </Col>
+
+        <Col>
+          <Weather />
         </Col>
 
 
