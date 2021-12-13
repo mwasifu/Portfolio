@@ -1,0 +1,29 @@
+.projects{
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    background-color: rgb(53, 53, 53);
+    place-content: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.content{
+    place-content: center;
+}
+
+h1{
+    margin-bottom: 4rem;
+    color: white;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(95, 95, 95);
+    text-decoration: none;
+    color: white;
+}

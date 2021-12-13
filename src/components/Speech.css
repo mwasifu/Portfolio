@@ -1,0 +1,17 @@
+
+.control{
+    border-radius: 200px;
+    padding: 3%;
+    border: 0;
+    color: white;
+    background-color: gold;
+    font-size: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.control:hover{
+    transition: 0.4s;
+    transform: scale(1.2);
+}
+

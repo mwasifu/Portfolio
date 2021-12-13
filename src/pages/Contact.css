@@ -1,0 +1,26 @@
+h1{
+    font-weight: lighter;
+    font-size: 4rem;
+}
+
+h4{
+    font-weight: lighter;
+    font-size: 2.5rem;
+}
+
+.contact{
+    background-color: rgb(238, 202, 0);
+    text-align: center;
+    padding: 10rem;
+    font-weight: lighter;
+}
+
+ .tags{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 2.5rem;
+}
+
+.profile{
+    color:rgb(187, 153, 0);
+}
