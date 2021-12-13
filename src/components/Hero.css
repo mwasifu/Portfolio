@@ -1,12 +1,14 @@
 .heading{
     font-size: 4rem;
-    padding-top: 4rem;
-    padding-bottom: 8rem;
+    padding-top: 10%;
     background-color: rgb(255, 196, 0);
     place-content: center;
     text-align: center;
     color: white;
     text-align: center;
+    position: relative; 
+    height: 100vh;
+
 }
 
 .big{
@@ -26,5 +28,6 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
+ 
 
 }

@@ -1,11 +1,15 @@
 import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 
 import '../pages/Contact.css'
 
 const Contact = () => {
     return (
-
-        <div className="contact">
+        
+<Row>
+    <Col>
+    <div className="contact">
+        
             <h1>Talk to me.</h1>
             <br />
             <br />
@@ -22,6 +26,9 @@ const Contact = () => {
             <br />
             <h4>Follow me on  <a className="tags" href="https://www.instagram.com/mwasifu/"> Instagram </a></h4>
         </div>
+    </Col>
+</Row>
+
 
     )
 }
