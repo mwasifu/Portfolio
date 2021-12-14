@@ -23,7 +23,7 @@ const Weather = () => {
     console.log(location);
     axios({
       method: "GET",
-      url: `http://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=imperial&appid=${apiKey}`,
+      url: `http://api.openweathermap.org/data/2.5/weather/?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=imperial&appid=${apiKey}`,
     })
       .then((response) => {
         const cityX = response.data.name;
@@ -31,7 +31,7 @@ const Weather = () => {
         const iconX = response.data.weather[0].icon;
         setIcon(iconX);
         document.getElementById("weatherIcon").src =
-          "http://openweathermap.org/img/wn/" + iconX + "@2x.png";
+          "https://openweathermap.org/img/wn/" + iconX + "@2x.png";
         const tempX = response.data.main.temp;
         setTemperature(tempX + " F");
         const conditionX = response.data.weather[0].main;
