@@ -73,7 +73,7 @@ const Projects = () => {
  
         </Col>
 
-        <Col>
+        <Col style={{marginTop: "5%"}}>
           <Weather />
         </Col>
 

@@ -23,7 +23,7 @@ const Weather = () => {
     console.log(location);
     axios({
       method: "GET",
-      url: `http://api.openweathermap.org/data/2.5/weather/?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=imperial&appid=${apiKey}`,
+      url: `https://api.openweathermap.org/data/2.5/weather/?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=imperial&appid=${apiKey}`,
     })
       .then((response) => {
         const cityX = response.data.name;
