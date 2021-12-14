@@ -6,6 +6,9 @@ import Weather from "../components/Weather";
 import "./Projects.css";
 
 const Projects = () => {
+
+  const weather = Weather();
+
   return (
     <div className="projects">
       <h1>Projects</h1>
