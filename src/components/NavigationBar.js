@@ -25,12 +25,20 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
+ 
             <NavUnlisted>
-              <Link to="/contact" style={linkStyle}>Contact</Link>
-            </NavUnlisted>           
+              <Link to="/playground" style={linkStyle}>Playground</Link>
+            </NavUnlisted>        
              <NavUnlisted>
               <Link to="/projects" style={linkStyle}>Projects</Link>
             </NavUnlisted>
+            <NavUnlisted>
+              <Link to="/contact" style={linkStyle}>Contact</Link>
+            </NavUnlisted>  
+            <NavUnlisted>
+              <Link to="/about" style={linkStyle}>About</Link>
+            </NavUnlisted>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

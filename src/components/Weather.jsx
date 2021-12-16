@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Card, Button, FloatingLabel, Form } from "react-bootstrap";
+import { Row, Col, Card, Button, Container } from "react-bootstrap";
 import axios from "axios";
 const Weather = () => {
   const apiKey = "86ddf68890ff862711c0fc76d79c9b6e";
-
+  let id;
   const [city, setCity] = useState("");
   const [temperature, setTemperature] = useState("");
   const [high, setHigh] = useState("");
@@ -45,6 +45,7 @@ const Weather = () => {
         const windX = response.data.wind.speed;
         setWind("Wind Speed: " + windX + " mph");
         console.log(response.data);
+        navigator.geolocation.clearWatch(id);
       })
       .catch((error) => {
         console.log(error);
@@ -75,74 +76,161 @@ const Weather = () => {
 
   return (
     <div>
-      <Row>
-        <Col>
-          <Card bg="dark" text="white" border="light">
-            <Card.Body>
-              <Col>
-                <Row sm={2} style={{ paddingTop: "3%" }}>
+      <Container>
+        <Row>
+          <Col>
+            <Card bg="dark" text="white" border="light">
+              <Card.Body>
+                <Col>
+                  <Row sm={2} style={{ paddingTop: "3%" }}>
+                    <Card.Title
+                      style={{
+                        margin: "auto",
+                        textAlign: "left",
+                        fontSize: "2rem",
+                        fontWeight: "200",
+                      }}
+                    >
+                      How's the weather?
+                    </Card.Title>
+                    <Button
+                      variant="secondary"
+                      style={{
+                        margin: "auto",
+                        width: "30%",
+                        justifyContent: "center",
+                      }}
+                      onClick={() => {
+                        id = navigator.geolocation.getCurrentPosition(
+                          success,
+                          failed
+                        );
+                      }}
+                    >
+                      Check
+                    </Button>
+                  </Row>
+
                   <Card.Title
                     style={{
-                      margin: "auto",
-                      textAlign: "left",
-                      fontSize: "2rem",
-                      fontWeight: "200",
-                    }}
-                  >
-                    How's the weather?
-                  </Card.Title>
-                  <Button
-                    variant="secondary"
-                    style={{
-                      margin: "auto",
-                      width: "30%",
-                      justifyContent: "center",
-                    }}
-                    onClick={() =>
-                      navigator.geolocation.getCurrentPosition(success, failed)
-                    }
-                  >
-                    Check
-                  </Button>
-                </Row>
-
-                <Card.Title
-                  style={{
                       marginTop: "8%",
-                    fontSize: "2.3rem",
-                    fontWeight: "300",
-                  }}
-                >
-                  {city}
-                </Card.Title>
-                <Row sm={2} md={2} lg={2}>
-                  <Card.Title style={{paddingLeft: "7%",margin: "auto", marginBottom: "5%", fontSize: "2rem", fontWeight: "200", textAlign: "left"}}>{temperature}</Card.Title>
-                  <div style={{paddingRight: "5%",margin: "auto",  fontSize: "2rem", fontWeight: "200", textAlign: "right"}}>
-                    <img id="weatherIcon" src="" alt="" />
+                      fontSize: "2.3rem",
+                      fontWeight: "300",
+                    }}
+                  >
+                    {city}
+                  </Card.Title>
+                  <Row sm={2} md={2} lg={2}>
+                    <Card.Title
+                      style={{
+                        paddingLeft: "7%",
+                        margin: "auto",
+                        marginBottom: "5%",
+                        fontSize: "2rem",
+                        fontWeight: "200",
+                        textAlign: "left",
+                      }}
+                    >
+                      {temperature}
+                    </Card.Title>
+                    <div
+                      style={{
+                        paddingRight: "5%",
+                        margin: "auto",
+                        fontSize: "2rem",
+                        fontWeight: "200",
+                        textAlign: "right",
+                      }}
+                    >
+                      <img id="weatherIcon" src="" alt="" />
+                    </div>
+                  </Row>
+                  <Row sm={2} md={2} lg={2}>
+                    <Col>
+                      <Card.Title
+                        style={{
+                          paddingLeft: "11%",
+                          margin: "auto",
+                          marginBottom: "10%",
+                          fontSize: "2rem",
+                          fontWeight: "200",
+                          textAlign: "left",
+                        }}
+                      >
+                        {high}
+                      </Card.Title>
+                      <Card.Title
+                        style={{
+                          paddingLeft: "11%",
+                          margin: "auto",
+                          marginBottom: "10%",
+                          fontSize: "2rem",
+                          fontWeight: "200",
+                          textAlign: "left",
+                        }}
+                      >
+                        {low}
+                      </Card.Title>
+                      <Card.Title
+                        style={{
+                          paddingLeft: "11%",
+                          margin: "auto",
+                          marginBottom: "10%",
+                          fontSize: "2rem",
+                          fontWeight: "200",
+                          textAlign: "left",
+                        }}
+                      >
+                        {feel}
+                      </Card.Title>
+                    </Col>
+
+                    <Col>
+                      <Card.Title
+                        style={{
+                          paddingRight: "11%",
+                          margin: "auto",
+                          marginBottom: "10%",
+                          fontSize: "2rem",
+                          fontWeight: "200",
+                          textAlign: "right",
+                        }}
+                      >
+                        {condition}
+                      </Card.Title>
+
+                      <Card.Title
+                        style={{
+                          paddingRight: "11%",
+                          margin: "auto",
+                          marginBottom: "10%",
+                          fontSize: "2rem",
+                          fontWeight: "200",
+                          textAlign: "right",
+                        }}
+                      >
+                        {wind}
+                      </Card.Title>
+                    </Col>
+                  </Row>
+
+                  <div>
+                    <Card.Text
+                      style={{
+                        textAlign: "right",
+                        fontSize: "0.5rem",
+                        fontWeight: "100",
+                      }}
+                    >
+                      Powered by OpenWeather
+                    </Card.Text>
                   </div>
-                </Row>
-                <Row sm={2} md={2} lg={2}>
-                  <Col>
-                    <Card.Title style={{paddingLeft: "11%",margin: "auto", marginBottom: "10%", fontSize: "2rem", fontWeight: "200", textAlign: "left"}}>{high}</Card.Title>
-                    <Card.Title style={{paddingLeft: "11%",margin: "auto", marginBottom: "10%", fontSize: "2rem", fontWeight: "200", textAlign: "left"}}>{low}</Card.Title>
-                    <Card.Title style={{paddingLeft: "11%",margin: "auto", marginBottom: "10%", fontSize: "2rem", fontWeight: "200", textAlign: "left"}}>{feel}</Card.Title>
-                  </Col>
-
-                  <Col>
-                    <Card.Title style={{paddingRight: "11%",margin: "auto", marginBottom: "10%", fontSize: "2rem", fontWeight: "200", textAlign: "right"}}>{condition}</Card.Title>
-
-                    <Card.Title style={{paddingRight: "11%",margin: "auto", marginBottom: "10%", fontSize: "2rem", fontWeight: "200", textAlign: "right"}}>{wind}</Card.Title>
-                  </Col>
-                </Row>
-
-                <div>
-                    <Card.Text style={{textAlign: "right", fontSize: "0.5rem", fontWeight: "100"}}>Powered by OpenWeather</Card.Text>
-                </div>
-              </Col>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+                </Col>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

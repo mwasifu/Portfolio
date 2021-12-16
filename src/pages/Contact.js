@@ -10,7 +10,7 @@ const Contact = () => {
     <Col>
     <div className="contact">
         
-            <h1>Talk to me.</h1>
+            <h1 className="top">Talk to me.</h1>
             <br />
             <br />
             <a className="tags" href = "mailto: mwasifu@outlook.com">Email Me</a>
@@ -24,7 +24,7 @@ const Contact = () => {
             <a className="tags" href="https://github.com/mwasifu?tab=repositories">Github</a>
             <br />
             <br />
-            <h4>Follow me on  <a className="tags" href="https://www.instagram.com/mwasifu/"> Instagram </a></h4>
+            <a className="tags" href="https://www.instagram.com/mwasifu/"> Instagram </a>
         </div>
     </Col>
 </Row>

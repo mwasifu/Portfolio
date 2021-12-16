@@ -5,7 +5,8 @@ import * as tf from "@tensorflow/tfjs";
 import * as speech from "@tensorflow-models/speech-commands";
 import "./Speech.css";
 
-import { drawBall } from "./utilities";
+import { drawBall } from "./utils/utilities";
+import { Col, Row } from "react-bootstrap";
 
 const Speech = () => {
   // model and action states
@@ -16,8 +17,8 @@ const Speech = () => {
   // Canvas Ref and x,y coordinates and radius (r)
   const canvasRef = useRef(null);
   const [x, setX] = useState(700);
-  const [y, setY] = useState(400);
-  const [r, setR] = useState(30);
+  const [y, setY] = useState(200);
+  const [r, setR] = useState(20);
 
   //  Recognizer
   const loadModel = async () => {
@@ -59,53 +60,79 @@ const Speech = () => {
   };
 
   useEffect(() => {
-      const updateBall = action === "up" ? setY(y-60) : action === "down" ? setY(y+60) : action === "right" ? setX(x+60) : action === "left" ? setX(x-60) : "";
-      canvasRef.current.width = 1200;
-      canvasRef.current.height = 640;
-      const ctx = canvasRef.current.getContext("2d");
-      console.log(x, y, r);
-      drawBall(ctx, x,y,r);
-      setAction('Speak to see some magic');
-  }, [action])
- 
-
+    const updateBall =
+      action === "up"
+        ? setY(y - 60)
+        : action === "down"
+        ? setY(y + 60)
+        : action === "right"
+        ? setX(x + 60)
+        : action === "left"
+        ? setX(x - 60)
+        : "";
+    canvasRef.current.width = 1200;
+    canvasRef.current.height = 400;
+    const ctx = canvasRef.current.getContext("2d");
+    console.log(x, y, r);
+    drawBall(ctx, x, y, r);
+    setAction("Speak to see some magic");
+  }, [action]);
 
   return (
-    <div style={{ textAlign: "center" }}>
-
-      <div style={{color: "white", backgroundColor: "black"}}>
-        <h1 style={{marginBottom: '0', paddingTop: '5%'}}>Control the ball with your Voice!</h1>
+    <div style={{ textAlign: "center", zIndex: "999", position: "relative" }}>
+      <div style={{ color: "white", backgroundColor: "black" }}>
+        <h1 style={{ marginBottom: "0", paddingTop: "5%" }}>
+          Control the ball with your Voice!
+        </h1>
       </div>
-      <canvas 
+      <canvas
         ref={canvasRef}
         style={{
           textAlign: "center",
           zIndex: "9",
           width: "100%",
-          height: 720,
+          height: 300,
           backgroundColor: "black",
-          marginBottom: 0
+          marginBottom: 0,
         }}
-        />
+      />
+ 
+      <Row style={{ marginTop: "2%"}}>
+        <Col style={{textAlign: "right"}}>
+          <button className="control" onClick={recognizeCommand} >
+            Talk
+          </button>
+        </Col>
+        <Col style={{textAlign: "left"}}>
+          <button
+            className="control"
+            style={{ backgroundColor: "red" }}
+            onClick={pause}
+          >
+            Stop
+          </button>
+        </Col>
+      </Row>
 
+      <div style={{ textAlign: "center", padding: "5%", color: "black" }}>
+        <h2 style={{ marginBottom: "3%" }}>Instructions</h2>
+        <h3 style={{ fontWeight: "400", marginBottom: "1%" }}>
+          1. Press <strong>Talk</strong>
+        </h3>
+        <h3 style={{ fontWeight: "400", marginBottom: "1%" }}>
+          2. Make it move!{" "}
+          <p style={{ margin: "1%", color: "red" }}>Up, Down, Left, Right</p>
+        </h3>
 
-      <div style={{ display: "flex", columnGap: "65%", textAlign: "center", alignItems: "center", paddingLeft: "25%", paddingRight: "25%", paddingTop: "5%", paddingBottom: "2%", margin: 0}}>
-        <button className="control" onClick={recognizeCommand}>
-          Talk
-        </button>
-        <button className="control" style={{backgroundColor:"red"}} onClick={pause}>
-          Stop
-        </button>
-        </div>
-        <div style={{textAlign: "center", padding: "5%", color: "black"}}>
-            <h2 style={{ marginBottom: "3%"}}>Instructions</h2>
-            <h3 style={{ fontWeight: "400", marginBottom: "1%"}}>1. Press <strong>Talk</strong></h3>
-            <h3 style={{ fontWeight: "400", marginBottom: "1%"}}>2. Make it move! <p style={{margin: "1%", color: "red"}}>Up, Down, Left, Right</p></h3>
-            
-            <h3 style={{ fontWeight: "400" }}>3. Press <strong>Stop</strong> to disengage</h3>
-            <br /><br />
-            <h6 style={{color: "gray", fontWeight: "200", fontSize: "1.5rem"}}>Control the canvas using speech recognition from TensorflowJS</h6>
-        </div>
+        <h3 style={{ fontWeight: "400" }}>
+          3. Press <strong>Stop</strong> to disengage
+        </h3>
+        <br />
+        <br />
+        <h6 style={{ color: "gray", fontWeight: "200", fontSize: "1.5rem" }}>
+          Control the canvas using speech recognition from TensorflowJS
+        </h6>
+      </div>
     </div>
   );
 };

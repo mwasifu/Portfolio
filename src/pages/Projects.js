@@ -62,18 +62,17 @@ const Projects = () => {
           </Col>
           
         </Row>
-        <Col style={{marginTop: "5%"}}>
+        
+        <Col style={{ padding: "8%", paddingTop: "0", paddingBottom:"5%",margin:"auto", marginTop: "5%"}}>
           <Card className="mb-2" bg="light" border="dark" border="secondary">
           <Card.Body style={{ padding: 0, paddingBottom: "2%" }}>
             <Speech />
-            <Card.Title>Control the Ball</Card.Title>
-            <Card.Text>Tensorflow Speech Command based movements</Card.Text>
           </Card.Body>
         </Card>
- 
         </Col>
+   
 
-        <Col style={{marginTop: "5%"}}>
+        <Col>
           <Weather />
         </Col>
 
