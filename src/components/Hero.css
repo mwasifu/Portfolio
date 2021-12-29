@@ -1,23 +1,19 @@
 .heading{
     font-size: 4rem;
-    padding-top: 10%;
-    background-color: rgb(255, 196, 0);
+    padding: 10%;
+    background-color: rgb(34, 34, 34);
     place-content: center;
     text-align: center;
     color: white;
     text-align: center;
     position: relative; 
-    height: 100vh;
+
 
 }
 
 .big{
     font-size: 8rem;
 }
-.medium{
-    font-size: 3rem;
-}
-
 .heading :hover{
     transition: 0.5s;
     transform: skewX(5deg);

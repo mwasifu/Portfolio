@@ -3,6 +3,7 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import Particles from "react-tsparticles";
 
 import Typewriter from "typewriter-effect";
+import ParticleComponent from "../components/ParticleComponent";
 
 const About = () => {
   const particlesInit = (main) => {
@@ -17,83 +18,7 @@ const About = () => {
 
   return (
     <Container fluid style={{ padding: "0" }}>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              resize: true,
-            },
-            modes: {
-              bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.8,
-                size: 40,
-              },
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 50,
-                duration: 0.6,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: "#D4AF37",
-            },
-            links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-              value: 40,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "edge",
-            },
-            size: {
-              random: true,
-              value: 5,
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+      <ParticleComponent />
 
       <Col
         style={{

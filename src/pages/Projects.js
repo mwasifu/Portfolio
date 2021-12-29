@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
+
 import Speech from "../components/Speech";
 import Weather from "../components/Weather";
 
@@ -62,21 +63,6 @@ const Projects = () => {
           </Col>
           
         </Row>
-        
-        <Col style={{ padding: "8%", paddingTop: "0", paddingBottom:"5%",margin:"auto", marginTop: "5%"}}>
-          <Card className="mb-2" bg="light" border="dark" border="secondary">
-          <Card.Body style={{ padding: 0, paddingBottom: "2%" }}>
-            <Speech />
-          </Card.Body>
-        </Card>
-        </Col>
-   
-
-        <Col>
-          <Weather />
-        </Col>
-
-
     </div>
   );
 };
