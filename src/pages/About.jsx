@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Particles from "react-tsparticles";
 
 import Typewriter from "typewriter-effect";
 import ParticleComponent from "../components/ParticleComponent";
@@ -31,6 +30,13 @@ const About = () => {
         }}
       >
         <Col>
+          <Col>
+            <Image
+              src="../../../assets/me.png"
+              style={{ width: "15%", height: "15%" }}
+            />
+          </Col>
+          <br />
           <Typewriter
             options={{
               autoStart: true,
@@ -39,48 +45,14 @@ const About = () => {
               typewriter.typeString("Hello! I'm Mohammed Wasif Uddin.").start();
             }}
           />
-          <div style={{ color: "rgb(255, 196, 0)" }}>
-            <Typewriter
-              options={{
-                autoStart: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .pauseFor(4500)
-                  .typeString("Front End Developer")
-                  .start();
-              }}
-            />
-          </div>
 
-          <Col>
-            <Image className="myImage" src="../../../assets/me.png" />
-          </Col>
+          <br />
           <Col>
             <h2 style={{ fontWeight: "200" }}>
               Aspiring Web Developer with a knack for UI and visual design based
               in Dallas, TX.
             </h2>
             <br />
-            <Typewriter
-              options={{
-                autoStart: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter.pauseFor(1000).typeString("Code to Create.").start();
-              }}
-            />
-            <Typewriter
-              options={{
-                autoStart: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .pauseFor(3000)
-                  .typeString("That's what makes it fun!")
-                  .start();
-              }}
-            />
           </Col>
           <Col style={{ margin: "5%" }}>
             <Row>

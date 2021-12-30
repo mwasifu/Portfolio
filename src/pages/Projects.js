@@ -1,18 +1,16 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 
-import Speech from "../components/Speech";
-import Weather from "../components/Weather";
+
 
 import "./Projects.css";
 
 const Projects = () => {
 
-  const weather = Weather();
 
   return (
     <div className="projects">
-      <h1>Projects</h1>
+      <h1 style={{fontWeight: "300"}}>Projects</h1>
     
         <Row xs={1} lg={2} className="g-4" style={{textAlign: 'center'}}>
           <Col>

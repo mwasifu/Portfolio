@@ -1,7 +1,8 @@
 .top{
     font-weight: 200;
     font-size: 4rem;
-    color: rgb(100, 100, 100);
+    color: rgb(255, 255, 255);
+    margin-bottom: 3%;
 }
 
 h4{
@@ -10,9 +11,9 @@ h4{
 }
 
 .contact{
-    background-color: rgb(255, 196, 0);
+    background-color: rgb(37, 37, 37);
     text-align: center;
-    padding: 10rem;
+    padding: 6rem;
     font-weight: lighter;
 }
 
@@ -20,9 +21,4 @@ h4{
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 2.5rem;
-}
-
-.profile{
-    color:rgb(187, 153, 0);
-
 }

@@ -17,7 +17,7 @@
 .heading :hover{
     transition: 0.5s;
     transform: skewX(5deg);
-    color: rgb(187, 159, 35);
+    color: rgb(167, 167, 167);
 }
 
 .hero{

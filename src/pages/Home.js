@@ -13,7 +13,8 @@ const Home = () => {
       <Container
         fluid
         style={{
-          backgroundColor: "black",
+          backgroundImage: "url(../assets/starry.jpg)",
+          backgroundSize: "cover",
           justifyContent: "center",
           padding: "8%",
         }}
