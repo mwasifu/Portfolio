@@ -42,7 +42,7 @@ const About = () => {
           <Col>
             <Image
               src="../../../assets/me.png"
-              style={{ width: "15%", height: "15%" }}
+              style={{ width: "25%", height: "25%" }}
             />
           </Col>
           <br />
