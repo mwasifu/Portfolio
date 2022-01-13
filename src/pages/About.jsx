@@ -1,5 +1,14 @@
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Col,
+  Container,
+  Image,
+  Row,
+  Card,
+  ListGroup,
+  Button,
+} from "react-bootstrap";
+import {Link} from "react-router-dom"
 
 import Typewriter from "typewriter-effect";
 import ParticleComponent from "../components/ParticleComponent";
@@ -56,65 +65,189 @@ const About = () => {
           </Col>
           <Col style={{ margin: "5%" }}>
             <Row>
-              <h2 style={{ fontWeight: "400", color: "rgb(255, 196, 0)" }}>
+              <h2
+                style={{
+                  fontWeight: "400",
+                  fontSize: "2.5rem",
+                  color: "rgb(255, 196, 0)",
+                }}
+              >
                 Skills
               </h2>
             </Row>
-            <Row sm={1} md={1} lg={2} style={{ margin: "3%" }}>
-              <Col>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-                  React.JS
-                </h3>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-                  Vue.JS
-                </h3>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-                  Node.JS
-                </h3>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-                  Tensorflow.JS
-                </h3>
+            <Row style={{ margin: "3%" }}>
+              <Col
+                xs={12}
+                xl={6}
+                style={{ textAlign: "center", marginBottom: "2%" }}
+              >
+                <Card text="light" border="dark">
+                  <Card.Header
+                    style={{ backgroundColor: "black", fontSize: "1.75rem" }}
+                  >
+                    Front-end
+                  </Card.Header>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        React.JS
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Vue.JS
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        HTML
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        CSS3
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        XAML
+                      </h3>
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Card>
               </Col>
-              <Col>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>WPF</h3>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-                  XAML
-                </h3>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>C#</h3>
-                <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-                  .NET Core
-                </h3>
+              <Col
+                xs={12}
+                xl={6}
+                style={{ textAlign: "center", marginBottom: "2%" }}
+              >
+                <Card text="light" border="dark" style={{}}>
+                  <Card.Header
+                    style={{ backgroundColor: "black", fontSize: "1.75rem" }}
+                  >
+                    Back-end
+                  </Card.Header>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Node.JS
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Express.JS
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        MongoDB
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Mongoose
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        SQL
+                      </h3>
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Card>
+              </Col>
+              <Col
+                xs={12}
+                xl={6}
+                style={{ textAlign: "center", marginBottom: "2%" }}
+              >
+                <Card style={{}} text="light" border="dark">
+                  <Card.Header
+                    style={{ backgroundColor: "black", fontSize: "1.75rem" }}
+                  >
+                    JS libraries
+                  </Card.Header>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        JQuery
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Bootstrap 5
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Tensorflow.JS
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Moment.JS
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Framer Motion
+                      </h3>
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Card>
+              </Col>
+              <Col
+                xs={12}
+                xl={6}
+                style={{ textAlign: "center", marginBottom: "2%" }}
+              >
+                <Card style={{}} text="light" border="dark">
+                  <Card.Header
+                    style={{ backgroundColor: "black", fontSize: "1.75rem" }}
+                  >
+                    Other Programming Languages
+                  </Card.Header>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        JavaScript ES6
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        C++
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Java
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        C#
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Python
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="dark">
+                      <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
+                        Ruby
+                      </h3>
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Card>
+              </Col>
+              <Col style={{paddingTop: "2%"}}>
+                
+                <Link to="../../../files/Resume.pdf" target="_blank" download>
+                  <Button variant="outline-light">Check out my Resume</Button>
+                </Link>
               </Col>
             </Row>
-          </Col>
-          <Col>
-            <Typewriter
-              options={{
-                autoStart: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .pauseFor(2000)
-                  .typeString("I do more than just code.")
-                  .start();
-              }}
-            />
-            <br />
-            <h2 style={{ marginBottom: "5%" }}>My other interests lie in: </h2>
-            <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-              Calisthenics
-            </h3>
-            <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-              Call of Duty
-            </h3>
-            <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-              Pursuit of covering Rolling Stones music
-            </h3>
-            <h3 style={{ fontWeight: "200", lineHeight: "2.5rem" }}>
-              Always looking out for aesthetics
-            </h3>
-
-            <Col></Col>
           </Col>
         </Col>
       </Col>

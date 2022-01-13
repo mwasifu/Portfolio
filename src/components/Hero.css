@@ -1,6 +1,7 @@
 .heading{
     font-size: 4rem;
     padding: 10%;
+    padding-bottom: 1%;
     background-color: rgb(34, 34, 34);
     place-content: center;
     text-align: center;
@@ -26,4 +27,15 @@
     margin-right: auto;
  
 
+}
+
+.motion-background{
+    font-size: 4rem;
+
+    background-color: rgb(34, 34, 34);
+    place-content: center;
+    text-align: center;
+    color: white;
+    text-align: center;
+    position: relative; 
 }

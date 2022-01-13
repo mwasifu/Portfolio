@@ -13,6 +13,7 @@ const Speech = () => {
   const [model, setModel] = useState(null);
   const [action, setAction] = useState(null);
   const [labels, setLabels] = useState(null);
+  const [listening, setListening] = useState("");
 
   // Canvas Ref and x,y coordinates and radius (r)
   const canvasRef = useRef(null);
@@ -40,11 +41,13 @@ const Speech = () => {
 
   const pause = async () => {
     model.stopListening();
+    setListening("");
     console.log("Stopped recording from inside pause");
   };
 
   const recognizeCommand = async () => {
     console.log("in");
+    setListening("Listening");
     model.listen(
       (result) => {
         console.log("Started listening");
@@ -81,9 +84,12 @@ const Speech = () => {
   return (
     <div style={{ textAlign: "center", zIndex: "999", position: "relative" }}>
       <div style={{ color: "white", backgroundColor: "black" }}>
-        <h1 style={{ marginBottom: "0", paddingTop: "5%" }}>
+        <h1 style={{ marginBottom: "0", paddingTop: "5%", fontWeight: "300" }}>
           Control the ball with your Voice!
         </h1>
+        <h3 style={{ marginBottom: "0", paddingTop: "2%", fontWeight: "300", color: "crimson" }}>
+          {listening}
+        </h3>
       </div>
       <canvas
         ref={canvasRef}
