@@ -39,13 +39,7 @@ const About = () => {
         }}
       >
         <Col>
-          <Col>
-            <Image
-              src="../../../assets/me.png"
-              style={{ width: "25%", height: "25%" }}
-            />
-          </Col>
-          <br />
+
           <Typewriter
             options={{
               autoStart: true,
