@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Col,
   Container,
@@ -9,7 +9,6 @@ import {
   Button,
 } from "react-bootstrap";
 import {Link} from "react-router-dom"
-
 import Typewriter from "typewriter-effect";
 import ParticleComponent from "../components/ParticleComponent";
 
@@ -23,6 +22,7 @@ const About = () => {
   const particlesLoaded = (container) => {
     console.log(container);
   };
+  const [data, setData] = useState(null);
 
   return (
     <Container fluid style={{ padding: "0" }}>
@@ -39,13 +39,14 @@ const About = () => {
         }}
       >
         <Col>
-
           <Typewriter
             options={{
               autoStart: true,
             }}
-            onInit={(typewriter) => {
-              typewriter.typeString("Hello! I'm Mohammed Wasif Uddin.").start();
+            onInit={ async (typewriter) => {
+              const fetchedData = await fetch('http://localhost:8000/api/portfolio').then(response => response.json());
+              typewriter.typeString(fetchedData.description).start();
+              
             }}
           />
 
@@ -56,6 +57,7 @@ const About = () => {
               in Dallas, TX.
             </h2>
             <br />
+            <h1>{}</h1>
           </Col>
           <Col style={{ margin: "5%" }}>
             <Row>
