@@ -1,15 +1,17 @@
 const express = require('express');
 const serverless = require("serverless-http");
 
-
-const bodyParser = require('body-parser');
-const { Configuration, OpenAIApi } = require('openai'); 
-
+//initialize app to use express
 const app = express();
 // Create a router to handle routes
 const router = express.Router();
-app.use(bodyParser.json());
+//dotenv for secret apiKey
+require('dotenv-vault-core').config()
+//intitlize variables for openAI api
+const bodyParser = require('body-parser');
+const { Configuration, OpenAIApi } = require('openai'); 
 
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any domain
@@ -20,7 +22,7 @@ app.use((req, res, next) => {
 
 // OpenAI-API
 const config = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_AI_KEY,
 });
 
 const openai = new OpenAIApi(config);
