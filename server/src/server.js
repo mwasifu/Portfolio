@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 
 // OpenAI-API
 const config = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 const openai = new OpenAIApi(config);
