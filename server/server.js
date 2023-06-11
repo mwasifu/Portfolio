@@ -29,7 +29,7 @@ app.get('/api/portfolio', (req, res) => {
 
 // OpenAI-API
 const config = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
 });
 
 const openai = new OpenAIApi(config);
