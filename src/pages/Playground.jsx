@@ -11,7 +11,7 @@ const Playground = () => {
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
 
-  const HTTP = "http://localhost:8000/api/openai";
+  const HTTP = "https://mwasifu.com/api/openai";
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -35,7 +35,7 @@ const Playground = () => {
 
 
     axios
-      .post('http://localhost:8000/api/openai', {"me": inputValue})
+      .post('https://mwasifu.com/api/openai', {"me": inputValue})
       .then((res) => setOutputValue(res.data.message.content))
       .catch((err) => console.log("error from client: " + err));
   };

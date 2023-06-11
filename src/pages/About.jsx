@@ -49,7 +49,7 @@ const About = () => {
               autoStart: true,
             }}
             onInit={ async (typewriter) => {
-              const fetchedData = await fetch('http://localhost:8000/api/portfolio').then(response => response.json());
+              const fetchedData = await fetch('https://www.mwasifu.com/api/portfolio').then(response => response.json());
               typewriter.typeString(fetchedData.description).start();
               
             }}

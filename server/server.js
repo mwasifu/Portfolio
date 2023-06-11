@@ -8,7 +8,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any domain
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Specify allowed HTTP methods
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Specify allowed headers
+  next();
+});
 
 app.get('/', (req, res) => {
     const portfolioData = {title: 'Wasif', description: "Hi! I am Wasif."}
