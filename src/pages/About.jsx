@@ -12,6 +12,7 @@ import {Link} from "react-router-dom"
 import Typewriter from "typewriter-effect";
 import ParticleComponent from "../components/ParticleComponent";
 
+
 const About = () => {
   const particlesInit = (main) => {
     console.log(main);
@@ -22,7 +23,10 @@ const About = () => {
   const particlesLoaded = (container) => {
     console.log(container);
   };
+
   const [data, setData] = useState(null);
+
+
 
   return (
     <Container fluid style={{ padding: "0" }}>
@@ -38,6 +42,7 @@ const About = () => {
           fontSize: "2rem",
         }}
       >
+        
         <Col>
           <Typewriter
             options={{
