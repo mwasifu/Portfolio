@@ -2,7 +2,6 @@ const express = require('express');
 const serverless = require("serverless-http");
 
 
-require('dotenv').config({path: __dirname + '/.env'});
 const bodyParser = require('body-parser');
 const { Configuration, OpenAIApi } = require('openai'); 
 
