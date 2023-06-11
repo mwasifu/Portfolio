@@ -35,7 +35,7 @@ const Playground = () => {
 
 
     axios
-      .post('http://mwasifu.com/.netlify/functions/server/api/openai', {"me": inputValue})
+      .post('https://mwasifu.com/.netlify/functions/server/api/openai', {"me": inputValue})
       .then((res) => setOutputValue(res.data.message.content))
       .catch((err) => console.log("error from client: " + err));
   };
