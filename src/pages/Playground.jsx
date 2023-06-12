@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Container, Form, Button } from "react-bootstrap";
 import Todolist from "../components/Playground/Todolist/Todolist";
 import Speech from "../components/Speech";
@@ -10,8 +10,7 @@ const Playground = () => {
   // chatgpt container handle
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
-
-  const HTTP = "https://mwasifu.com/api/openai";
+  const [displayOutput, setDisplayOutput] = useState("");
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -41,7 +40,10 @@ const Playground = () => {
         
       },
     })
-      .then((res) => setOutputValue(res.data.message.content))
+      .then((res) => {
+        setOutputValue(res.data.message.content);
+        setDisplayOutput(res.data.message.content);
+      })
       .catch((err) => console.log("error from client: " + err));
   };
 
@@ -100,7 +102,7 @@ const Playground = () => {
                     backgroundColor: "rgba(0, 0, 0, 0.5)",
                   }}
                 >
-                  {outputValue ? outputValue : "Ask me anything"}
+                  {displayOutput ? displayOutput : "Ask me anything"}
                 </Card.Text>
               </Card.Body>
             </Card>
