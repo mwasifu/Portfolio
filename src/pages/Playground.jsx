@@ -33,9 +33,14 @@ const Playground = () => {
       }, 3000);
     });
 
-
+// https://server-mwasifu.netlify.app/.netlify/functions/server/api/openai
     axios
-      .post('https://www.mwasifu.com/.netlify/functions/server/api/openai', {"me": inputValue})
+      .post('https://server-mwasifu.netlify.app/.netlify/functions/server/api/openai', {"me": inputValue},     {
+      headers: {
+        'Content-Type': 'application/json',  // Example header
+        
+      },
+    })
       .then((res) => setOutputValue(res.data.message.content))
       .catch((err) => console.log("error from client: " + err));
   };
